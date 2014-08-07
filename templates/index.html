@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Welcome to Django Bookmarks
+{% endblock title  %}
+
+{% block external %}
+	<script type="text/javascript" src="/contents/js/image_uploader.js"></script>
+{% endblock %}
+
+{% block content %}
+	<div id="id_wrap">
+		<div id="id_header">
+		
+		</div>
+		
+		<div id="id_middle">
+			<div id="id_uploadbox">
+				<p id="id_uploadbox_message">Drag & Drop Files Here</p>
+				<div id="id_source_image"> </div>
+			</div>
+				 
+			<div id="id_controlbox"> 
+				<div id="id_select_file">
+					<input id="input_select_file" name="file" type="file"></input>
+				</div>
+				<div id="id_select_operation">
+					<select id="id_operation">
+					  <option value="face">Face Recognition</option>
+					  <option value="edge">Edge Detection</option>
+					</select>
+					<button id="id_btn_process">Process</button>
+				</div>
+				<div id="id_message">
+				</div>
+			</div>
+			
+			<div id="id_ipbox">
+			
+			</div>
+		</div>
+		
+		<div id="id_footer">
+		
+		</div>
+		
+	</div>
+	
+{% endblock content  %}

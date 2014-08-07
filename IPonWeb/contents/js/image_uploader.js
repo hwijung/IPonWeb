@@ -106,7 +106,7 @@ function sendFileToServer(formData)
         	image_width = parseFloat( data.width );
         	image_height = parseFloat( data.height );
         	image_ratio = image_width / image_height;
-        	
+       
         	frame_width = parseFloat ( $("#id_source_image").css("width").replace(/[^-\d\.]/g, '') );
         	frame_height = parseFloat ( $("#id_source_image").css("height").replace(/[^-\d\.]/g, '') );
         	// frame_ratio = frame_width / frame_height;
