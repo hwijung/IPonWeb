@@ -54,7 +54,8 @@ WSGI_APPLICATION = 'IPonWeb.wsgi.application'
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 PROJECT_DIR = os.path.join(BASE_DIR,'IPonWeb')
 APP_DIR = os.path.join(BASE_DIR,'IP')
-UPLOAD_DIR = os.path.join(PROJECT_DIR, 'contents/upload')
+UPLOAD_RELATIVE_DIR = 'contents/upload'
+UPLOAD_DIR = os.path.join(PROJECT_DIR, UPLOAD_RELATIVE_DIR)
  
 
 # Database

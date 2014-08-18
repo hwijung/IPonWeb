@@ -14,8 +14,10 @@ urlpatterns = patterns('',
     url(r'^$', main_page),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^upload/', upload),
-    
+    url(r'^process/', process),
+     
     # Media
     url(r'^contents/(?P<path>.*)$', 'django.views.static.serve', 
         { 'document_root': contents }),
 )
+ 
