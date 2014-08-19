@@ -43,7 +43,8 @@ def process(request):
 
             result = face_detect(path,outputpath)
                 
-            json_data = json.dumps({'result':result, 'output':'%s/%s' % (UPLOAD_RELATIVE_DIR,output_filename)})
+            json_data = json.dumps({'result':result, 'operation':request.POST['operation'], 
+                                        'output':'%s/%s' % (UPLOAD_RELATIVE_DIR,output_filename)})
             
             return HttpResponse(json_data, mimetype="application/json")
         

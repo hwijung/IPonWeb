@@ -162,14 +162,14 @@ function sendProcessRequestToServer(formData) {
 
 function addResultImage(data) {
 	count = $('.cs_processed_image').length + 1;
-	// template = "<div class=\"cs_processed_image\" id=\"id_processed_image" + count + "\"> </div>";
+	
 	template = "<a class=\"cs_processed_image_link\" " +
 			"id=\"id_processed_image" + count + "\" " +
 			"href=\"" + data.output + 
 			"\" data-lightbox=\"" + count + 
-			"\" data-title=\"\">" + 
+			"\" data-title=\"" + data.operation + "\">" + 
 			"<img class=\"cs_processed_image\" src=\"" + data.output + 
-			"\" alt=\"" + count + "\">" + 
+			"\" alt=\"" + count + "\">" + data.operation + 
 			"</a>";
 			
 	$("#id_ipbox").append ( template );
