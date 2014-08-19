@@ -1,17 +1,21 @@
 {% extends "base.html" %}
 
 {% block title %}
-	Welcome to Django Bookmarks
+	Main
 {% endblock title  %}
 
 {% block external %}
 	<script type="text/javascript" src="/contents/js/image_uploader.js"></script>
+	<script type="text/javascript" src="/contents/js/lightbox.min.js"></script>
+	
+	<link href="/contents/css/lightbox.css" rel="stylesheet" />
 {% endblock %}
 
 {% block content %}
 	<div id="id_wrap">
 		<div id="id_header">
-		
+			<h2>Image Processing using OpenCV</h2>
+			<p>select any images that you want to play with then click Process button</p>
 		</div>
 		
 		<div id="id_middle">

@@ -167,10 +167,9 @@ function addResultImage(data) {
 			"id=\"id_processed_image" + count + "\" " +
 			"href=\"" + data.output + 
 			"\" data-lightbox=\"" + count + 
-			"\" data-title=\"My Caption\">" + 
+			"\" data-title=\"\">" + 
 			"<img class=\"cs_processed_image\" src=\"" + data.output + 
 			"\" alt=\"" + count + "\">" + 
-			"<small>hello world</small>" +
 			"</a>";
 			
 	$("#id_ipbox").append ( template );
