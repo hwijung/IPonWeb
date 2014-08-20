@@ -169,8 +169,8 @@ function addResultImage(data) {
 			"\" data-lightbox=\"" + count + 
 			"\" data-title=\"" + data.operation + "\">" + 
 			"<img class=\"cs_processed_image\" src=\"" + data.output + 
-			"\" alt=\"" + count + "\">" + data.operation + 
-			"</a>";
+			"\" alt=\"" + count + "\"><div>" + data.operation + 
+			"</div></a>";
 			
 	$("#id_ipbox").append ( template );
 	

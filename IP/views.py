@@ -33,21 +33,28 @@ def upload(request):
 
 def process(request): 
     if request.method == 'POST':
-        if request.POST['operation'] == 'face':
-            # get file name from session 
-            filename = request.session['filename']
-            output_filename = 'output_%s' % (filename) 
-            
-            path = '%s/%s' % (UPLOAD_DIR, filename)
-            outputpath = '%s/%s' % (UPLOAD_DIR, output_filename)
-
+        operation = request.POST['operation']
+        
+         # get file name from session 
+        filename = request.session['filename']
+        output_filename = '%s_%s' % (operation, filename) 
+        
+        path = '%s/%s' % (UPLOAD_DIR, filename)
+        outputpath = '%s/%s' % (UPLOAD_DIR, output_filename)
+        
+        if operation == 'face':
             result = face_detect(path,outputpath)
                 
-            json_data = json.dumps({'result':result, 'operation':request.POST['operation'], 
+            json_data = json.dumps({'result':result, 'operation':operation, 
                                         'output':'%s/%s' % (UPLOAD_RELATIVE_DIR,output_filename)})
             
             return HttpResponse(json_data, mimetype="application/json")
         
-        # else if request.POST['operation'] == 'edge':
+        elif operation == 'edge':
+            result = edge_detect(path, outputpath)
+            
+            json_data = json.dumps({'result':result, 'operation':operation, 
+                                        'output':'%s/%s' % (UPLOAD_RELATIVE_DIR,output_filename)})
+            return HttpResponse(json_data, mimetype="application/json")
    
     

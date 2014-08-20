@@ -29,3 +29,10 @@ def _box(rects, path, outpath):
         cv2.rectangle(img, (x1, y1), (x2, y2), (127, 255, 0), 2)
     cv2.imwrite(outpath, img);
 
+def edge_detect(path, outpath):
+    img = cv2.imread(path)
+    edges = cv2.Canny(img, 100, 200)
+    cv2.imwrite(outpath, edges)
+    return True
+    
+    
